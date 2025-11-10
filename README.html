@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCTV Monitoring System - Professional Web-Based Surveillance</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: white;
+        }
+        
+        .header h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .header p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .main-content {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem;
+            text-align: center;
+        }
+        
+        .hero-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-section p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+        
+        .badges {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        
+        .badge {
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .content-section {
+            padding: 3rem;
+        }
+        
+        .section {
+            margin-bottom: 3rem;
+        }
+        
+        .section h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #667eea;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .section h4 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .feature-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .feature-card h4 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tech-stack {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .tech-item {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+        
+        .tech-item:hover {
+            border-color: #667eea;
+        }
+        
+        .tech-item i {
+            font-size: 2rem;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+        
+        .code-block {
+            background: #1a1a1a;
+            color: #f8f8f2;
+            padding: 1.5rem;
+            border-radius: 10px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            margin: 1rem 0;
+        }
+        
+        .install-steps {
+            counter-reset: step;
+        }
+        
+        .install-step {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 4rem;
+        }
+        
+        .install-step::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 1rem;
+            top: 1.5rem;
+            background: #667eea;
+            color: white;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .screenshot {
+            width: 100%;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            margin: 2rem auto;
+            display: block;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+            
+            .hero-section, .content-section {
+                padding: 2rem 1rem;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-video"></i> CCTV Monitoring System</h1>
+            <p>Professional Web-Based Surveillance with RTSP Support</p>
+            <div class="badges">
+                <span class="badge"><i class="fas fa-star"></i> Production Ready</span>
+                <span class="badge"><i class="fas fa-shield-alt"></i> Secure</span>
+                <span class="badge"><i class="fas fa-mobile-alt"></i> Responsive</span>
+                <span class="badge"><i class="fas fa-plug"></i> RTSP Compatible</span>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="hero-section">
+                <h2>Advanced CCTV Monitoring Platform</h2>
+                <p>Real-time surveillance system with multi-protocol streaming support, built for professional security monitoring</p>
+                
+                <div class="stats">
+                    <div class="stat-card">
+                        <div class="stat-number">12+</div>
+                        <div>Camera Support</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">3</div>
+                        <div>Stream Protocols</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">4</div>
+                        <div>Grid Layouts</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <div>Responsive</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-section">
+                <div class="section">
+                    <h3><i class="fas fa-rocket"></i> Quick Start</h3>
+                    
+                    <h4>Prerequisites</h4>
+                    <div class="tech-stack">
+                        <div class="tech-item">
+                            <i class="fab fa-node-js"></i>
+                            <div>Node.js 18+</div>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-database"></i>
+                            <div>SQLite</div>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-code"></i>
+                            <div>TypeScript</div>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-react"></i>
+                            <div>React 18</div>
+                        </div>
+                    </div>
+                    
+                    <h4>Installation</h4>
+                    <div class="install-steps">
+                        <div class="install-step">
+                            <strong>Clone the repository</strong>
+                            <div class="code-block">git clone https://github.com/yourusername/cctv-monitoring-system.git
+cd cctv-monitoring-system</div>
+                        </div>
+                        
+                        <div class="install-step">
+                            <strong>Install dependencies</strong>
+                            <div class="code-block">npm install</div>
+                        </div>
+                        
+                        <div class="install-step">
+                            <strong>Setup database</strong>
+                            <div class="code-block">npm run db:push
+npm run db:seed</div>
+                        </div>
+                        
+                        <div class="install-step">
+                            <strong>Start development server</strong>
+                            <div class="code-block">npm run dev</div>
+                        </div>
+                    </div>
+                    
+                    <p><strong>🎉 Open your browser and navigate to <a href="http://localhost:3000">http://localhost:3000</a></strong></p>
+                </div>
+                
+                <div class="section">
+                    <h3><i class="fas fa-star"></i> Key Features</h3>
+                    
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <h4><i class="fas fa-video"></i> Multi-Protocol Streaming</h4>
+                            <p>Support for RTSP, HLS, and MJPEG streaming protocols. Compatible with all major CCTV brands including Hikvision, Dahua, Axis, and more.</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <h4><i class="fas fa-th"></i> Flexible Grid Layouts</h4>
+                            <p>Choose from 1×1, 2×2, 3×3, or 4×4 grid layouts. Automatically adjusts camera selection based on layout.</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <h4><i class="fas fa-search"></i> Advanced Search & Filter</h4>
+                            <p>Real-time search across camera names, locations, and IDs. Smart filtering by status and stream type.</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <h4><i class="fas fa-cog"></i> RTSP Configuration</h4>
+                            <p>Built-in RTSP URL configuration panel. Support for authentication and custom stream paths.</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <h4><i class="fas fa-mobile-alt"></i> Responsive Design</h4>
+                            <p>Mobile-first design with touch-friendly controls. Works seamlessly on desktop, tablet, and mobile devices.</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <h4><i class="fas fa-database"></i> Database Integration</h4>
+                            <p>Prisma ORM with SQLite for camera management. Easy migration to PostgreSQL or MySQL for production.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3><i class="fas fa-cogs"></i> Technical Stack</h3>
+                    
+                    <div class="tech-stack">
+                        <div class="tech-item">
+                            <i class="fas fa-layer-group"></i>
+                            <div>Next.js 15</div>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-react"></i>
+                            <div>React 18</div>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-code"></i>
+                            <div>TypeScript</div>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-paint-brush"></i>
+                            <div>Tailwind CSS</div>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-database"></i>
+                            <div>Prisma ORM</div>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-cube"></i>
+                            <div>SQLite</div>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-bolt"></i>
+                            <div>HLS.js</div>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-video"></i>
+                            <div>RTSP Support</div>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-plug"></i>
+                            <div>Socket.io</div>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-box"></i>
+                            <div>shadcn/ui</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3><i class="fas fa-plug"></i> RTSP Setup</h3>
+                    
+                    <h4>Supported Camera Formats</h4>
+                    <div class="code-block">
+# Hikvision Cameras
+rtsp://admin:password@192.168.1.100:554/Streaming/Channels/101
+
+# Dahua Cameras  
+rtsp://admin:password@192.168.1.100:554/cam/realmonitor?channel=1&subtype=0
+
+# Axis Cameras
+rtsp://root:password@192.168.1.100:554/axis-media/media.amp
+
+# Generic ONVIF
+rtsp://admin:password@192.168.1.100:554/live
+                    </div>
+                    
+                    <h4>RTSP Proxy Server</h4>
+                    <p>For production deployment, use MediaMTX (recommended):</p>
+                    <div class="code-block">
+# Docker Setup
+docker run -d \
+  -p 8554:8554 \
+  -p 8888:8888 \
+  -p 8889:8889 \
+  aler9/rtsp-simple-server
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3><i class="fas fa-code"></i> API Documentation</h3>
+                    
+                    <h4>Camera Management</h4>
+                    <div class="code-block">
+# Get all cameras
+GET /api/cameras
+
+# Add new camera
+POST /api/cameras
+{
+  "cameraId": "CAM001",
+  "name": "Main Entrance",
+  "location": "Building A",
+  "rtspUrl": "rtsp://admin:password@192.168.1.100:554/stream1",
+  "streamType": "RTSP"
+}
+
+# Update camera
+PUT /api/cameras/[id]
+{
+  "name": "Updated Name",
+  "status": "ONLINE"
+}
+
+# Delete camera
+DELETE /api/cameras/[id]
+                    </div>
+                    
+                    <h4>Stream Configuration</h4>
+                    <div class="code-block">
+# Get stream config
+GET /api/streams/[cameraId]
+
+# Update stream config
+POST /api/streams/[cameraId]
+{
+  "rtspUrl": "rtsp://admin:password@192.168.1.100:554/stream1",
+  "streamType": "RTSP"
+}
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3><i class="fas fa-cogs"></i> Configuration</h3>
+                    
+                    <h4>Environment Variables</h4>
+                    <div class="code-block">
+# Database
+DATABASE_URL="file:./dev.db"
+
+# RTSP Proxy (optional)
+RTSP_PROXY_HOST="localhost"
+RTSP_PROXY_PORT="8080"
+
+# Application
+NODE_ENV="development"
+PORT="3000"
+                    </div>
+                    
+                    <h4>Database Schema</h4>
+                    <div class="code-block">
+model Camera {
+  id          String   @id @default(cuid())
+  cameraId    String   @unique
+  name        String
+  location    String
+  status      CameraStatus @default(OFFLINE)
+  resolution  String   @default("1920x1080")
+  fps         Int      @default(30)
+  rtspUrl     String?
+  streamType  StreamType @default(HLS)
+  lastUpdate  DateTime @default(now())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3><i class="fas fa-rocket"></i> Deployment</h3>
+                    
+                    <h4>Docker Deployment</h4>
+                    <div class="code-block">
+# Build image
+docker build -t cctv-monitoring .
+
+# Run container
+docker run -d \
+  -p 3000:3000 \
+  -v $(pwd)/data:/app/data \
+  cctv-monitoring
+                    </div>
+                    
+                    <h4>Production Setup</h4>
+                    <ol>
+                        <li>Configure environment variables</li>
+                        <li>Setup RTSP proxy server (MediaMTX recommended)</li>
+                        <li>Configure firewall ports (554, 8080, 8888)</li>
+                        <li>Set up reverse proxy (nginx recommended)</li>
+                        <li>Configure SSL certificates</li>
+                        <li>Set up monitoring and logging</li>
+                    </ol>
+                </div>
+                
+                <div class="section">
+                    <h3><i class="fas fa-shield-alt"></i> Security Features</h3>
+                    
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <h4><i class="fas fa-lock"></i> Secure Authentication</h4>
+                            <p>RTSP authentication support with encrypted credentials storage.</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <h4><i class="fas fa-user-shield"></i> Access Control</h4>
+                            <p>Role-based access control for different user levels.</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <h4><i class="fas fa-file-alt"></i> Audit Logs</h4>
+                            <p>Comprehensive logging of all camera access and changes.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3><i class="fas fa-question-circle"></i> Troubleshooting</h3>
+                    
+                    <h4>Common Issues</h4>
+                    <div class="code-block">
+# Camera Connection Failed
+- Check RTSP URL format
+- Verify camera credentials  
+- Test network connectivity
+- Check firewall settings
+
+# Stream Not Loading
+- Verify RTSP proxy server status
+- Check port forwarding
+- Confirm stream path
+
+# Performance Issues
+- Reduce number of simultaneous streams
+- Lower video quality settings
+- Check bandwidth capacity
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3><i class="fas fa-hands-helping"></i> Contributing</h3>
+                    
+                    <p>We welcome contributions! Please follow these steps:</p>
+                    <ol>
+                        <li>Fork the repository</li>
+                        <li>Create a feature branch (<code>git checkout -b feature/amazing-feature</code>)</li>
+                        <li>Commit your changes (<code>git commit -m 'Add amazing feature'</code>)</li>
+                        <li>Push to the branch (<code>git push origin feature/amazing-feature</code>)</li>
+                        <li>Open a Pull Request</li>
+                    </ol>
+                    
+                    <h4>Development Guidelines</h4>
+                    <ul>
+                        <li>Follow TypeScript best practices</li>
+                        <li>Use ESLint and Prettier formatting</li>
+                        <li>Write tests for new features</li>
+                        <li>Update documentation</li>
+                        <li>Follow conventional commit messages</li>
+                    </ul>
+                </div>
+                
+                <div class="section">
+                    <h3><i class="fas fa-certificate"></i> License</h3>
+                    
+                    <p>This project is licensed under the MIT License - see the <a href="LICENSE">LICENSE</a> file for details.</p>
+                    
+                    <h4>Third-Party Licenses</h4>
+                    <ul>
+                        <li>Next.js - MIT License</li>
+                        <li>React - MIT License</li>
+                        <li>Tailwind CSS - MIT License</li>
+                        <li>Prisma - Apache-2.0 License</li>
+                        <li>HLS.js - Apache-2.0 License</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>&copy; 2024 CCTV Monitoring System. Built with ❤️ using modern web technologies.</p>
+            <p>
+                <a href="https://github.com/yourusername/cctv-monitoring-system">
+                    <i class="fab fa-github"></i> GitHub Repository
+                </a> •
+                <a href="https://github.com/yourusername/cctv-monitoring-system/issues">
+                    <i class="fas fa-bug"></i> Report Issues
+                </a> •
+                <a href="https://github.com/yourusername/cctv-monitoring-system/discussions">
+                    <i class="fas fa-comments"></i> Discussions
+                </a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
