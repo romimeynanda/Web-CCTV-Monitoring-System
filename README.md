@@ -1,21 +1,54 @@
+
 # 🎥 CCTV Monitoring System
 
 <div align="center">
+  <img src="https://img.shields.io/badge/CCTV-Monitoring%20System-blue?style=for-the-badge" alt="CCTV Monitoring System">
+  <img src="https://img.shields.io/badge/version-1.0.0-green?style=for-the-badge" alt="Version">
+  <img src="https://img.shields.io/badge/license-MIT-purple?style=for-the-badge" alt="License">
+  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript" alt="TypeScript">
+  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js" alt="Next.js">
+</div>
 
-![CCTV Monitoring System](https://img.shields.io/badge/CCTV-Monitoring%20System-blue?style=for-the-badge)
-![Version](https://img.shields.io/badge/version-1.0.0-green?style=for-the-badge)
-![License](https://img.shields.io/badge/license-MIT-purple?style=for-the-badge)
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js)
+<div align="center">
+  <h3>Professional Web-Based Surveillance with RTSP Support</h3>
+  <p>Real-time surveillance system with multi-protocol streaming support, built for professional security monitoring.</p>
+</div>
 
-**Professional Web-Based Surveillance with RTSP Support**
+<div align="center">
+  <a href="http://localhost:3000">
+    <img src="https://img.shields.io/badge/Demo-Live-orange?style=for-the-badge" alt="Demo">
+  </a>
+  <a href="#documentation">
+    <img src="https://img.shields.io/badge/Documentation-Read%20Me-blue?style=for-the-badge" alt="Documentation">
+  </a>
+  <a href="https://github.com/romimeynanda/Web-CCTV-Monitoring-System/issues">
+    <img src="https://img.shields.io/badge/Report%20Bug-Fix%20Me-red?style=for-the-badge" alt="Report Bug">
+  </a>
+  <a href="https://raw.githubusercontent.com/romimeynanda/Web-CCTV-Monitoring-System/main/README.md">
+    <img src="https://img.shields.io/badge/Download-Now-brightgreen?style=for-the-badge&logo=github" alt="Download">
+  </a>
+</div>
 
-Real-time surveillance system with multi-protocol streaming support, built for professional security monitoring.
+---
 
-[![Demo](https://img.shields.io/badge/Demo-Live-orange?style=for-the-badge)](http://localhost:3000)
-[![Documentation](https://img.shields.io/badge/Documentation-Read%20Me-blue?style=for-the-badge)](#documentation)
-[![Report Bug](https://img.shields.io/badge/Report%20Bug-Fix%20Me-red?style=for-the-badge)](https://github.com/romimeynanda/Web-CCTV-Monitoring-System/issues)
-[![Download](https://img.shields.io/badge/Download-Now-brightgreen?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/romimeynanda/Web-CCTV-Monitoring-System/main/README.md)
+## 📋 Table of Contents
+
+- [📊 Project Statistics](#-project-statistics)
+- [📸 Preview](#-preview)
+- [🚀 Quick Start](#-quick-start)
+- [✨ Key Features](#-key-features)
+- [🛠️ Technical Stack](#️-technical-stack)
+- [🔌 RTSP Setup](#-rtsp-setup)
+- [📚 API Documentation](#-api-documentation)
+- [🗄️ Database Schema](#️-database-schema)
+- [🚀 Deployment](#-deployment)
+- [🛡️ Security Features](#️-security-features)
+- [🐛 Troubleshooting](#-troubleshooting)
+- [🤝 Contributing](#-contributing)
+- [📄 License](#-license)
+- [🙏 Acknowledgments](#-acknowledgments)
+- [📞 Support](#-support)
+- [📥 Download Options](#-download-options)
 
 ---
 
@@ -31,11 +64,20 @@ Real-time surveillance system with multi-protocol streaming support, built for p
 
 ---
 
+## 📸 Preview
+
+<div align="center">
+  <img src="https://z-cdn-media.chatglm.cn/files/3551013d-2d7c-44d8-8cf7-674e6b68a30c_preview-chat-7e91a6c7-bb9f-4427-a9aa-f96a94b5c801.space.z.ai_.png?auth_key=1862745116-c6e45060bde844e2920507e2f9ee045b-0-016153badb49cc47626f24b8dc829b38" alt="CCTV Monitoring System dashboard with a 4x4 camera grid and a status sidebar.">
+  <p><i>Main dashboard view showing the camera grid, sidebar list, and real-time system status.</i></p>
+</div>
+
+---
+
 ## 🚀 Quick Start
 
 ### Prerequisites
 
-- **Node.js** 18+ 
+- **Node.js** 18+
 - **npm** or **yarn**
 - **SQLite** (default) or **PostgreSQL/MySQL** for production
 
@@ -64,24 +106,28 @@ npm run dev
 ## ✨ Key Features
 
 ### 🎥 Multi-Protocol Streaming
+
 - **RTSP Protocol** - Direct connection to CCTV cameras
-- **HLS Streaming** - HTTP Live Streaming for browser compatibility  
+- **HLS Streaming** - HTTP Live Streaming for browser compatibility
 - **MJPEG Streaming** - Motion JPEG for simple web streaming
 - **Auto-detection** - Smart protocol selection
 
 ### 🎛️ Advanced Interface
+
 - **Flexible Grid Layouts** - 1×1, 2×2, 3×3, 4×4 options
 - **Real-time Search** - Filter cameras by name, location, status
 - **Interactive Sidebar** - Mobile-responsive camera management
 - **Video Controls** - Play, pause, mute, fullscreen support
 
 ### 🔌 RTSP Integration
+
 - **Built-in Configuration** - RTSP URL setup panel
 - **Authentication Support** - Username/password authentication
 - **Camera Compatibility** - Hikvision, Dahua, Axis, ONVIF
 - **Connection Management** - Auto-reconnect and error handling
 
 ### 📱 Responsive Design
+
 - **Mobile-First** - Touch-friendly controls
 - **Adaptive Layout** - Works on all screen sizes
 - **Progressive Enhancement** - Core features work everywhere
@@ -268,28 +314,29 @@ docker run -d -p 3000:3000 -v $(pwd)/data:/app/data cctv-monitoring
 
 ### Production Setup
 
-1. **Environment Variables**
-   ```bash
-   DATABASE_URL="postgresql://user:password@localhost:5432/cctv"
-   RTSP_PROXY_HOST="localhost"
-   RTSP_PROXY_PORT="8080"
-   NODE_ENV="production"
-   ```
+1.  **Environment Variables**
 
-2. **RTSP Proxy Server**
-   - Install MediaMTX or FFmpeg
-   - Configure camera sources
-   - Set up port forwarding
+    ```bash
+       DATABASE_URL="postgresql://user:password@localhost:5432/cctv"
+       RTSP_PROXY_HOST="localhost"
+       RTSP_PROXY_PORT="8080"
+       NODE_ENV="production"
+    ```
 
-3. **Web Server**
-   - Nginx reverse proxy
-   - SSL certificates
-   - Firewall configuration
+2.  **RTSP Proxy Server**
+    - Install MediaMTX or FFmpeg
+    - Configure camera sources
+    - Set up port forwarding
 
-4. **Monitoring**
-   - Application logging
-   - Performance monitoring
-   - Health checks
+3.  **Web Server**
+    - Nginx reverse proxy
+    - SSL certificates
+    - Firewall configuration
+
+4.  **Monitoring**
+    - Application logging
+    - Performance monitoring
+    - Health checks
 
 ---
 
@@ -346,11 +393,11 @@ npm run dev 2>&1 | tee debug.log
 
 We welcome contributions! Please follow these steps:
 
-1. **Fork** the repository
-2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
-3. **Commit** your changes (`git commit -m 'Add amazing feature'`)
-4. **Push** to the branch (`git push origin feature/amazing-feature`)
-5. **Open** a Pull Request
+1.  **Fork** the repository
+2.  **Create** a feature branch (`git checkout -b feature/amazing-feature`)
+3.  **Commit** your changes (`git commit -m 'Add amazing feature'`)
+4.  **Push** to the branch (`git push origin feature/amazing-feature`)
+5.  **Open** a Pull Request
 
 ### Development Guidelines
 
@@ -417,31 +464,40 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 ## 📥 Download Options
 
 ### 📄 Markdown Version
+
 - **Direct Download**: [README.md](https://raw.githubusercontent.com/romimeynanda/Web-CCTV-Monitoring-System/main/README.md)
 - **View Online**: [GitHub Repository](https://github.com/romimeynanda/Web-CCTV-Monitoring-System/blob/main/README.md)
 
 ### 🌐 HTML Version
+
 - **HTML README**: [README.html](https://raw.githubusercontent.com/romimeynanda/Web-CCTV-Monitoring-System/main/README.html)
 - **Interactive Demo**: [GitHub Pages](https://romimeynanda.github.io/Web-CCTV-Monitoring-System/)
 
 ### 📦 Source Code
-- **Clone Repository**: 
-  ```bash
-  git clone https://github.com/romimeynanda/Web-CCTV-Monitoring-System.git
-  ```
+
+- **Clone Repository**:
+    ```bash
+      git clone https://github.com/romimeynanda/Web-CCTV-Monitoring-System.git
+    ```
 - **Download ZIP**: [Download ZIP](https://github.com/romimeynanda/Web-CCTV-Monitoring-System/archive/refs/heads/main.zip)
 
 ---
 
 <div align="center">
-
-**⭐ Star this repository if it helped you!**
-
-Made with ❤️ by [Romi Mey Nanda](https://github.com/romimeynanda)
-
-[![GitHub stars](https://img.shields.io/github/stars/romimeynanda/Web-CCTV-Monitoring-System?style=social)](https://github.com/romimeynanda/Web-CCTV-Monitoring-System)
-[![GitHub forks](https://img.shields.io/github/forks/romimeynanda/Web-CCTV-Monitoring-System?style=social)](https://github.com/romimeynanda/Web-CCTV-Monitoring-System)
-[![GitHub issues](https://img.shields.io/github/issues/romimeynanda/Web-CCTV-Monitoring-System)](https://github.com/romimeynanda/Web-CCTV-Monitoring-System/issues)
-[![GitHub license](https://img.shields.io/github/license/romimeynanda/Web-CCTV-Monitoring-System)](https://github.com/romimeynanda/Web-CCTV-Monitoring-System/blob/main/LICENSE)
-
+  <h3>⭐ Star this repository if it helped you!</h3>
+  <p>Made with ❤️ by <a href="https://github.com/romimeynanda">Romi Meynanda Syahputra</a></p>
+  
+  <a href="https://github.com/romimeynanda/Web-CCTV-Monitoring-System">
+    <img src="https://img.shields.io/github/stars/romimeynanda/Web-CCTV-Monitoring-System?style=social" alt="GitHub stars">
+  </a>
+  <a href="https://github.com/romimeynanda/Web-CCTV-Monitoring-System">
+    <img src="https://img.shields.io/github/forks/romimeynanda/Web-CCTV-Monitoring-System?style=social" alt="GitHub forks">
+  </a>
+  <a href="https://github.com/romimeynanda/Web-CCTV-Monitoring-System/issues">
+    <img src="https://img.shields.io/github/issues/romimeynanda/Web-CCTV-Monitoring-System" alt="GitHub issues">
+  </a>
+  <a href="https://github.com/romimeynanda/Web-CCTV-Monitoring-System/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/romimeynanda/Web-CCTV-Monitoring-System" alt="GitHub license">
+  </a>
 </div>
+```
